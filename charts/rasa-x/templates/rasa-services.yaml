@@ -8,9 +8,6 @@ metadata:
     {{ include "rasa-x.labels" $ | nindent 4 }}
     app.kubernetes.io/component: {{ .serviceName }}
 {{- with $.Values.rasa.service.annotations }}
-  annotations:
-    {{- toYaml . | nindent 4 }}
-{{- end }}
 spec:
   ports:
   - port: {{ $.Values.rasa.port }}
